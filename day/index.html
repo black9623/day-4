@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minmum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/radios.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="app" ng-controller="ster">
+    <header class="header">
+          <i class="iconfont icon-zuojiantou L"></i>  <p>订单支付</p> <i class="iconfont icon-xiaoxi R"></i>
+    </header>
+    <section class="section">
+        <nav class="nav">
+            <div class="title"><p class="name">路飞</p><p class="ipht">138****8888</p></div>
+            <div class="content">
+                <i class="iconfont icon-dizhi L"></i><p>北京市海淀区知春路北京市海淀区知春路北京市海淀区 知春路</p>
+                <i class="iconfont icon-iconfontjiantouyou R"></i>
+            </div>
+        </nav>
+        <div class="cont">
+                <div class="title">
+                    <i class="iconfont icon-dianpu"></i><p>恒之然旗舰店</p>
+                </div>
+                <dl>
+                    <dt><img src="images/img_06.png" alt=""></dt>
+                    <dd>
+                        <p>维维嚼益嚼水果大豆棒橙味维维嚼 益嚼水果大豆棒橙味...</p>
+                        <div class="left">
+                            <span class="t">￥{{price}}</span>
+                            <span class="b">¥1000.00</span>
+                        </div>
+                        <div class="right">
+                            <input type="button" value="-" class="del" ng-click="del()"><input type="text" value="1" class="val" ng-model="txt"><input type="button" value="+" ng-click="add()" class="add">
+                        </div>
+                    </dd>
+                </dl>
+                <div class="bottom">
+                    <p><span class="le">商品总金额:</span><span class="ri">¥988.00</span></p>
+                    <p><span class="le">运费:</span><span class="ri">¥10.00</span></p>
+                    <p><span class="le">总额(含运费):</span><span class="ri" style="color: red;font-weight: bold">¥998.00</span></p>
+                </div>
+        </div>
+        <div class="bott">
+            <div class="p">
+                <span class="le">余额支付 ¥100.00</span>
+                <div class="yue checkding ri">
+                    <label class="toggle_radio">
+                        <input type="checkbox" class="xzd" ng-click="xzd()" ng-model="qwe1">
+                        <div class="track track-jia">
+                            <div class="icon"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+                <div class="p">
+                    <span class="le">奖金支付 ¥100.00</span>
+                    <div class="yue checkding ri">
+                        <label class="toggle_radio">
+                            <input type="checkbox" class="xzd2" ng-click="xzd2()" ng-model="qwe2">
+                            <div class="track track-jia">
+                                <div class="icon"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+           <div class="p"><span class="le">其他支付方式</span><i class="ri iconfont icon-iconfontjiantouyou"></i></div>
+        </div>
+        <div ng-if="qwe1" class="aler">金额不足，请选择其他支付方式！</div>
+    </section>
+    <footer class="footer">
+       <div class="left"><p>总计:<span>¥{{zj}}</span></p><span>(含运费)</span></div> <p class="R">提交订单</p>
+    </footer>
+    <script src="js/angular.min.js"></script>
+    <script>
+        var xzd = document.querySelector('.xzd');
+        var xzd2 = document.querySelector('.xzd2');
+        var app = angular.module("app",[]);
+        app.controller("ster",function($scope,$rootScope){
+            $scope.txt = 1;
+            $scope.price = "998.00";
+            $scope.zj = "998.00";
+            $scope.del = function () {
+                if ($scope.txt<=1){
+                    alert("最少为1")
+                }else{
+                    $scope.txt--;
+                    if (xzd.checked) {
+                        $scope.zj = ($scope.price*$scope.txt-chk1).toFixed(2);
+                    } else {
+                        $scope.zj = ($scope.price*$scope.txt).toFixed(2);
+                    }
+                }
+            }
+
+            $scope.add = function () {
+                $scope.txt++;
+                if (xzd.checked) {
+                    $scope.zj = ($scope.price*$scope.txt-100).toFixed(2);
+                } else {
+                    $scope.zj = ($scope.price*$scope.txt).toFixed(2);
+                }
+            }
+
+            $scope.xzd = function () {
+                if (xzd.checked) {
+                    $scope.zj = ($scope.price*$scope.txt-100).toFixed(2);
+                    $scope.qwe2 = false;
+                } else {
+                    $scope.zj = ($scope.price*$scope.txt).toFixed(2);
+                }
+            }
+
+            $scope.xzd2 = function () {
+                if (xzd2.checked) {
+                    $scope.zj = ($scope.price*$scope.txt-100).toFixed(2);
+                    $scope.qwe1 = false
+                } else {
+                    $scope.zj = ($scope.price*$scope.txt).toFixed(2);
+                }
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>

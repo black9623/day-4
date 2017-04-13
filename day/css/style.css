@@ -1,0 +1,157 @@
+body {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  display: -webkit-flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-family: "Microsoft Yahei"; }
+  body .header {
+    height: 44px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
+    position: relative;
+    padding-top: 12px;
+    box-sizing: border-box; }
+    body .header .L {
+      position: absolute;
+      top: 17px;
+      left: 10px; }
+    body .header .R {
+      position: absolute;
+      top: 16px;
+      right: 10px; }
+  body .section {
+    flex-direction: column;
+    flex: 1;
+    overflow-y: scroll;
+    background: #eeeeee; }
+    body .section .nav {
+      background: #ffffff;
+      height: 88px;
+      border-bottom: 10px solid transparent;
+      border-image: url("../images/icon_02.png") 8 repeat; }
+      body .section .nav .title {
+        display: -webkit-flex;
+        padding-top: 10px;
+        margin-bottom: 10px; }
+        body .section .nav .title .name {
+          margin-right: 20px;
+          padding-left: 30px; }
+      body .section .nav .content {
+        height: 52px;
+        display: -webkit-flex; }
+        body .section .nav .content p {
+          width: 90%;
+          font-size: 12px; }
+    body .section .cont {
+      height: 242px;
+      background: #ffffff;
+      margin-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px; }
+      body .section .cont .title {
+        height: 44px;
+        line-height: 44px;
+        display: -webkit-flex; }
+        body .section .cont .title i {
+          margin-right: 5px; }
+      body .section .cont dl {
+        height: 106px;
+        display: -webkit-flex; }
+        body .section .cont dl dt img {
+          height: 106px; }
+        body .section .cont dl dd {
+          margin-left: 8px;
+          position: relative; }
+          body .section .cont dl dd .left {
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            height: 30px;
+            width: 64px; }
+            body .section .cont dl dd .left .t {
+              color: red;
+              font-weight: bold; }
+            body .section .cont dl dd .left .b {
+              text-decoration: line-through;
+              color: #cccccc;
+              font-size: 12px; }
+          body .section .cont dl dd .right {
+            position: absolute;
+            right: 0;
+            bottom: 5px; }
+            body .section .cont dl dd .right .del, body .section .cont dl dd .right .add {
+              width: 30px;
+              height: 30px;
+              border: 1px solid #cccccc;
+              text-align: center; }
+            body .section .cont dl dd .right .val {
+              border: 1px solid #cccccc;
+              width: 50px;
+              height: 26px;
+              text-align: center; }
+      body .section .cont .bottom {
+        height: 70px;
+        margin-top: 20px; }
+        body .section .cont .bottom p {
+          height: 14px;
+          color: #666666;
+          margin-bottom: 8px; }
+          body .section .cont .bottom p .ri {
+            float: right; }
+    body .section .bott {
+      height: 172px;
+      margin-top: 10px;
+      background: #ffffff;
+      margin-bottom: 10px; }
+      body .section .bott .p {
+        height: 56px;
+        border-bottom: 1px solid #eeeeee;
+        padding-right: 10px;
+        padding-left: 10px;
+        line-height: 56px;
+        display: -webkit-flex;
+        position: relative; }
+        body .section .bott .p .yue {
+          position: absolute;
+          top: 13px;
+          right: 10px; }
+        body .section .bott .p .ri {
+          position: absolute;
+          right: 5px; }
+    body .section .aler {
+      width: 80%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 58px;
+      left: 34px;
+      background: #000;
+      opacity: 0.5;
+      border-radius: 25px;
+      color: #ffffff; }
+  body .footer {
+    height: 58px;
+    display: -webkit-flex; }
+    body .footer .left {
+      flex: 3;
+      text-align: right;
+      display: -webkit-flex;
+      flex-direction: column;
+      margin-right: 10px; }
+      body .footer .left p {
+        color: red;
+        padding-top: 10px; }
+    body .footer .R {
+      flex: 2;
+      height: 58px;
+      background: #fc4141;
+      color: #ffffff;
+      text-align: center;
+      line-height: 58px; }
+
+/*# sourceMappingURL=style.css.map */
